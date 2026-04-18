@@ -1,0 +1,23 @@
+from collections import deque 
+class Solution:
+    def isBipartite(self, V, edges):
+        # code here
+        adj = [] 
+        for _ in range(0,V):
+            adj.append([]) 
+        for u,v in edges:
+            adj[u].append(v) 
+            adj[v].append(u) 
+        color = [-1]*V 
+        color[0] = 0 
+        q = deque([0])  
+        while(len(q)>0):
+            node = q.popleft()  
+            for adjNode in adj[node]:
+                if(color[adjNode] == -1):
+                    color[adjNode] = 1-color[node] 
+                    q.append(adjNode) 
+                elif(color[adjNode]!=-1):
+                    if(color[node] == color[adjNode]):
+                        return False 
+        return True 
