@@ -1,0 +1,27 @@
+import heapq
+heap=[]
+heapq.heappush(heap,6)
+heapq.heappush(heap,4)
+heapq.heappush(heap,2)
+heapq.heappush(heap,10)
+print(heap)
+print(heap[0])
+print(heapq.heappop(heap))
+print(heap)
+#user input 
+n=int(input())
+for _ in range(n):
+    nums=int(input())
+    heapq.heappush(heap,nums)
+# maximun heap
+import heapq
+heap=[]
+n=int(input())
+for _ in range(n):
+    nums=int(input())
+    heapq.heappush(heap,-nums)
+    print(heap)
+    print(-heap[0])
+    print(-heapq.heappop(heap))
+    print(heap)
+    
