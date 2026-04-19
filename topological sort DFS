@@ -1,0 +1,21 @@
+class Solution:
+    def topoSort(self, V, edges):
+        # Code here
+        def dfs(node):
+            vis[node] = 1 
+            for adjNode in adj[node]:
+                if(vis[adjNode] == 0):
+                    dfs(adjNode) 
+            stack.append(node) 
+            return 
+        adj = [] 
+        for _ in range(0,V):
+            adj.append([]) 
+        for u,v in edges:
+            adj[u].append(v) 
+        stack = [] 
+        vis = [0]*V 
+        for n in range(0,V):
+            if(vis[n] == 0):
+                dfs(n)
+        return stack[::-1]
