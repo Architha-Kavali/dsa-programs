@@ -1,0 +1,43 @@
+#even/odd
+n=int(input())
+if n%2==0:
+    print("even")
+else:
+    print("odd")
+______________________________________________
+#prime number
+n=int(input())
+cnt=0
+for i in range(1,n):
+    if(n % i==0):
+        cnt+=1
+if cnt==2:
+    ptint("prime")
+else:
+    print("not a prime ")
+_________________________________________
+#palindrome
+s=input()
+if s==s[::-1]:
+    print("palindrome")
+else:
+    print("not a palindrome")
+#number palindrome
+n=int(input())
+temp=n
+rev=0
+while n>0:
+    digit=n%10
+    rev=rev*10+digit
+    n=n//10
+if(temp==rev):
+    print("palindrome")
+else:
+    print("not a palindrome")
+_______________________________________
+factorial
+n=int(input())
+fact=1
+for i in range(1,n+1):
+    fact*=i
+print("factorial:",fact)
